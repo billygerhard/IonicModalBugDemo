@@ -7,14 +7,14 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button (click)="openModal()">Modal Controller</ion-button>
+  <ion-button id="trigger-button">Inline Modal</ion-button>
+  <ion-modal
+    [swipeToClose]="true"
+    [presentingElement]="routerOutlet.nativeEl"
+    mode="ios" trigger="trigger-button">
+    <ng-template>
+      <app-modal></app-modal>
+    </ng-template>
+  </ion-modal>
 </ion-content>
